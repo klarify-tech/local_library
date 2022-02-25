@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Name: {{ author.first_name}}</h1>
+
+  <h3>Details</h3>
+  <p><strong>First Name:</strong> {{ author.first_name }}</p> 
+  <p><strong>Last Name:</strong> {{ author.last_name }}</p>
+  <p><strong>DOB:</strong> {{ author.date_of_birth }}</p>
+  
+  <h3>Books</h3>
+  {% for copy in author.book_set.all %}
+  {{copy.title}}
+  <!-- code to iterate across each copy/instance of a book -->
+{% endfor %}
+
+  <div style="margin-left:20px;margin-top:20px">
+    
+  </div>
+{% endblock %}
